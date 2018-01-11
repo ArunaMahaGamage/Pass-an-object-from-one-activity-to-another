@@ -23,12 +23,14 @@ public class Main2Activity extends AppCompatActivity {
         Intent i = getIntent();
 
         // Serializable
-        Date date = (Date) i.getSerializableExtra("sampleObject");
+//        Date date = (Date) i.getSerializableExtra("sampleObject");
+
+        BeanSerializable beanSerializable = (BeanSerializable) i.getSerializableExtra("sampleObject");
 
         // Parcelable
         Bean bean = (Bean) getIntent().getExtras().getParcelable("bean");
 
-        tv_showdata.setText(date.toString());
+        tv_showdata.setText(beanSerializable.getName());
 
         tv_show.setText(bean.getName());
     }

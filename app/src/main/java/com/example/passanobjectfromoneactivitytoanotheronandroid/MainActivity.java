@@ -22,11 +22,12 @@ public class MainActivity extends AppCompatActivity {
 
         Date date = new Date();
         Bean bean = new Bean("Aruna");
+        BeanSerializable beanSerializable = new BeanSerializable("Gamage");
 
         Intent i = new Intent(this, Main2Activity.class);
 
         // Serializable
-        i.putExtra("sampleObject", date);
+        i.putExtra("sampleObject", beanSerializable);
 
         // Parcelable
         i.putExtra("bean", (Parcelable) bean);
